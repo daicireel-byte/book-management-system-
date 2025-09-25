@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+label 
+{
+    display: block;
+}
+
+span, .error {
+    color: red; margin: 0;
+}
+
+input, button, select
+{
+    border: 1px solid black;
+}
+
+.layout
+{
+    height: 100vh;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+    background: #fefefe;
+}
+
+.container
+{
+    background: lightgrey;
+    width: 250px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid darkgrey;
+}
