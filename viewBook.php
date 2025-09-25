@@ -1,12 +1,8 @@
 <?php
+
 require_once "library.php";
 $bookObj = new Library();
 
-// SEARCH FUNCTIONALITY ADDED
-$search = "";
-if (isset($_GET['search'])) {
-    $search = trim($_GET['search']);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +16,10 @@ if (isset($_GET['search'])) {
     <div class=container>
         <h1>List of Books</h1>
         
-        <!-- Search Form -->
+        <!-- Simple Search Form -->
         <form action="" method="get">
-            <input type="text" name="search" placeholder="Search books..." value="<?= htmlspecialchars($search) ?>">
+            <input type="text" name="search" placeholder="Search books...">
             <button type="submit">Search</button>
-            <?php if (!empty($search)): ?>
-                <a href="viewBook.php" style="margin-left: 10px;">Clear Search</a>
-            <?php endif; ?>
         </form>
         <br>
 
@@ -42,8 +35,7 @@ if (isset($_GET['search'])) {
             </tr>
             <?php
                 $no_counter = 1;
-                // SEARCH PARAMETER ADDED
-                foreach ($bookObj->viewBook($search) as $book)
+                foreach ($bookObj->viewBook() as $book)
                 {
             ?> 
                     <tr>
